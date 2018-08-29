@@ -163,11 +163,11 @@
 			items = data;
 		});
 
-		items.forEach(function(item) {
+		/*items.forEach(function(item) { <---Console log not needed here--->
 			if (item.id === id) {
 				console.log("Element with ID: " + id + " has been removed.");
 			}
-		});
+		});*/ 
 
 		self.model.remove(id, function () {
 			self.view.render('removeItem', id);
