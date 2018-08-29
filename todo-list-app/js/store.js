@@ -125,16 +125,18 @@
 		var todoId;
 		
 		for (var i = 0; i < todos.length; i++) {
-			if (todos[i].id == id) {
+			if (todos[i].id === id) { //added === and removed ==
 				todoId = todos[i].id;
+				todos.splice(i, 1); //Pulled from loop below
 			}
 		}
 
-		for (var i = 0; i < todos.length; i++) {
+	/*	for (var i = 0; i < todos.length; i++) {
 			if (todos[i].id == todoId) {
-				todos.splice(i, 1);
+				
 			}
-		}
+			<----This extra for loop is not needed (duplicate code)--->
+		}*/ 
 
 		localStorage[this._dbName] = JSON.stringify(data);
 		callback.call(this, todos);
