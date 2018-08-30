@@ -60,6 +60,21 @@ describe('controller', function () {
 
 	it('should show entries on start-up', function () {
 		// TODO: write test
+		//----->Test Start<-----
+
+		var todo ={}; //sets up an empty todo
+		setUpModel([todo]); //sets up model
+
+		subject.setView(''); //sets the view
+
+		expect(view.render).toHaveBeenCalledWith('showEntries',[todo]);
+		//expects view to render and to show entries of empty array
+
+		//----->Test Finish<-----
+
+
+
+
 	});
 
 	describe('routing', function () {
