@@ -99,10 +99,51 @@ describe('controller', function () {
 
 		it('should show active entries', function () {
 			// TODO: write test
+
+			//----->Test Start<-----
+			var todo = {title:"testTodo", completed:false}; //sets a todo as completed false
+
+			setUpModel([todo]); //sets up model with todo as argument
+
+			subject.setView('#/active'); //sets view to active
+
+			// will return true if the constructor matches the tested value
+			expect(model.read).toHaveBeenCalledWith({completed:false},jasmine.any(Function));
+
+			expect(view.render).toHaveBeenCalledWith('showEntries',[todo]); //returns true if showEntries is called with the todo array
+
+			expect(todo.completed).toEqual(false); //ensuring the todos are still uncompleted
+		
+			//----->Test Finish<-----
+
 		});
+
+
+
+
+		//});
 
 		it('should show completed entries', function () {
 			// TODO: write test
+			
+			//----->Test Start<-----
+
+			var todo={title:'testTodo',completed:true}; //sets up a completed todo
+
+			setUpModel([todo]); //sets up model with the completed todo
+
+			subject.setView('#/completed'); //sets active view to completed
+
+			//will return true if the constructor matches the tested value
+			expect(model.read).toHaveBeenCalledWith({completed:true},jasmine.any(Function));
+
+			expect(view.render).toHaveBeenCalledWith('showEntries',[todo]); //returns true if showEntries is called with the todo array
+
+			expect(todo.completed).toEqual(true); //ensuring the todos are completed
+		
+			//----->Test Finish<-----
+
+
 		});
 	});
 
