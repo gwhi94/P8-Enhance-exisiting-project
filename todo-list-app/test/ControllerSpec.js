@@ -73,8 +73,6 @@ describe('controller', function () {
 		//----->Test Finish<-----
 
 
-
-
 	});
 
 	describe('routing', function () {
@@ -137,9 +135,11 @@ describe('controller', function () {
 			//will return true if the constructor matches the tested value
 			expect(model.read).toHaveBeenCalledWith({completed:true},jasmine.any(Function));
 
-			expect(view.render).toHaveBeenCalledWith('showEntries',[todo]); //returns true if showEntries is called with the todo array
+			expect(view.render).toHaveBeenCalledWith('showEntries',[todo]); 
+			//returns true if showEntries is called with the todo array
 
-			expect(todo.completed).toEqual(true); //ensuring the todos are completed
+			expect(todo.completed).toEqual(true); 
+			//ensuring the todos are completed
 		
 			//----->Test Finish<-----
 
@@ -196,12 +196,16 @@ describe('controller', function () {
 
 
 	var currentPage ='';
+	//sets currentPage to empty
 	
 	setUpModel([]);
+	//sets up model
 
 	subject.setView('');
+	//sets up view
 
 	expect(view.render).toHaveBeenCalledWith('setFilter',currentPage);
+	//expects to have been called with set filter on current page
 
 	//----->Test Finish<-----
 
@@ -214,12 +218,16 @@ describe('controller', function () {
 		//----->Test Start<-----
 
 		var currentPage ='active';
+		//sets current page to active
 
 		setUpModel([]);
+		//sets model
 
-		subject.setView('#/active'); //sets to active view
+		subject.setView('#/active'); 
+		//sets to active view
 
-		expect(view.render).toHaveBeenCalledWith('setFilter', currentPage); //should be called with set filter and current page
+		expect(view.render).toHaveBeenCalledWith('setFilter', currentPage); 
+		//should be called with set filter and current page
 
 
 		//----->Test Finish<-----
@@ -239,10 +247,12 @@ describe('controller', function () {
 							{id:2,title:'testTodo2', completed:false},
 								{id:3,title:'testTodo3', completed:false}];
 			setUpModel(todos);
+			//declares todo before each test run and sets up model with todos
+			
 			subject.setView('');
-
-			//toggles all todos to completed
+			
 			view.trigger('toggleAll',{completed:true});
+			//toggles all todos to completed
 
 
 		});
@@ -337,6 +347,7 @@ describe('controller', function () {
 			//----->Test Start<-----
 
 			var todo = {id:1, title:'testTodo', completed:true};
+			//declares a new todo
 
 			setUpModel([todo]);
 
