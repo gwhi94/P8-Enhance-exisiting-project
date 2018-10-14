@@ -68,7 +68,7 @@ describe('controller', function () {
 		subject.setView(''); //sets the view
 
 		expect(view.render).toHaveBeenCalledWith('showEntries',[todo]);
-		//expects view to render and to show entries of empty array
+		//expects view to render and to show entries of array
 
 		//----->Test Finish<-----
 
