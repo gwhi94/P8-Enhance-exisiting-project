@@ -13,7 +13,7 @@
  * Jasmine.js
  * JavaScript
  * Performance analysis
- * Producing Technical Documentation
+ * Producing Technical Documentation (see wiki for the documentation)
  
  ### Setup
  
